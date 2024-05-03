@@ -13,7 +13,8 @@ class UsersTableSeeder extends Seeder
             ['name' => 'Admin', 'email' => 'admin@localhost', 'password' => Hash::make('password'), 'is_admin' => true],
             ['name' => 'User', 'email' => 'user@localhost', 'password' => Hash::make('password')],
             ['name' => 'Moderator', 'email' => 'moderator@localhost', 'password' => Hash::make('password'), 'is_moderator' => true],
-            ['name' => 'Guest', 'email' => 'guest@localhost', 'password' => Hash::make('password'), 'is_guest' => true]
+            ['name' => 'Guest', 'email' => 'guest@localhost', 'password' => Hash::make('password'), 'is_guest' => true],
+            ['name' => 'Super User', 'email' => 'superuser@localhost', 'password' => Hash::make('password'), 'is_admin' => true, 'is_moderator' => true, 'is_guest' => true]
         ];
 
         foreach ($users as $user) {
