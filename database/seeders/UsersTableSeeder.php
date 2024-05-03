@@ -9,7 +9,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $users = [
-            ['name' => 'Justine Dacocos', 'email' => 'dacocos@example.com', 'password' => Hash::make('password')]
+            ['name' => 'Justine Dacocos', 'email' => 'dacocos@example.com', 'password' => Hash::make('password')],
+            ['name' => 'Admin', 'email' => 'admin@localhost', 'password' => Hash::make('password'), 'is_admin' => true],
+            ['name' => 'User', 'email' => 'user@localhost', 'password' => Hash::make('password')],
+            ['name' => 'Moderator', 'email' => 'moderator@localhost', 'password' => Hash::make('password'), 'is_moderator' => true],
+            ['name' => 'Guest', 'email' => 'guest@localhost', 'password' => Hash::make('password'), 'is_guest' => true]
         ];
 
         foreach ($users as $user) {
