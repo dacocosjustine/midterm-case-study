@@ -20,7 +20,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->user_id = rand(1, 10);
         $post->save();
-        return redirect('/');
+        return redirect('/posts');
     }
 
     public function show($id){
@@ -38,12 +38,12 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
-        return redirect('/');
+        return redirect('/posts');
     }
 
     public function destroy($id){
         $post = Post::where('id', $id)->firstOrFail();
         $post->delete();
-        return redirect('/');
+        return redirect('/posts');
     }
 }
