@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\LoginController;
 
+Route::get('/', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/posts', [PostController::class,'index'])->name('posts.index');
     Route::get('/create', function(){
@@ -15,3 +22,5 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/update/{id}', [PostController::class,'update'])->name('posts.update');
     Route::delete('/delete/{id}', [PostController::class,'destroy'])->name('posts.destroy');
 });
+
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
