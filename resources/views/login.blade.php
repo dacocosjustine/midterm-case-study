@@ -47,6 +47,9 @@
                 </label>
             </div>
         </div>
+        <a class="btn btn-link" href="{{ route('register') }}">
+            Register
+        </a>
     </div>
 
     <div class="form-group row mb-0">
